@@ -41,13 +41,15 @@
   	  	  <ion-row>
   	  	    <ion-col col-6>
   	  	    	<ion-input type="text" placeholder="Depart Date" value=""></ion-input>
+  	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
   	  	    <ion-col col-6>
   	  	    	<ion-input type="text" placeholder="Return Date" value=""></ion-input>
+  	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
   	  	  </ion-row>
 
-  	  	  <ion-item>
+  	  	  <ion-item (click)="showPassengers()">
   	  	    <ion-input type="text" placeholder="Select No. of Passengers" value="1 Adult, Economy"></ion-input>
   	  	  </ion-item>
 

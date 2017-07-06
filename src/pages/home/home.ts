@@ -19,5 +19,9 @@ export class HomePage {
       const modal = this.modalCtrl.create('ModalPage');
       modal.present();
   }
+  showPassengers() {
+      const modal = this.modalCtrl.create('PassengersPage');
+      modal.present();
+  }
 
 }

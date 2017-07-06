@@ -1,0 +1,88 @@
+<!--
+  Generated template for the PassengersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-toolbar>
+	    <ion-buttons start>
+	      <button ion-button (click)="dismiss()">
+	        <ion-icon name="arrow-back"></ion-icon>
+	      </button>
+	    </ion-buttons>
+	    <ion-title>No. of Passengers</ion-title>
+	</ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="passengers">
+		<h5>Passengers</h5>
+
+		<ion-list>
+		  <ion-item>
+		    <ion-label>Adult (12+ years)</ion-label>
+		    <ion-select [(ngModel)]="adult">
+		      <ion-option value="1">1</ion-option>
+		      <ion-option value="2">2</ion-option>
+		      <ion-option value="3">3</ion-option>
+		      <ion-option value="4">4</ion-option>
+		      <ion-option value="5">5</ion-option>
+		      <ion-option value="6">6</ion-option>
+		      <ion-option value="7">7</ion-option>
+		      <ion-option value="8">8</ion-option>
+		      <ion-option value="9">9</ion-option>
+		    </ion-select>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label>Children (2-12 years)</ion-label>
+		    <ion-select [(ngModel)]="children">
+		      <ion-option value="1">1</ion-option>
+		      <ion-option value="2">2</ion-option>
+		      <ion-option value="3">3</ion-option>
+		      <ion-option value="4">4</ion-option>
+		      <ion-option value="5">5</ion-option>
+		      <ion-option value="6">6</ion-option>
+		      <ion-option value="7">7</ion-option>
+		      <ion-option value="8">8</ion-option>
+		    </ion-select>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label>Infants (under 2 years)</ion-label>
+		    <ion-select [(ngModel)]="children">
+		      <ion-option value="1">1</ion-option>
+		      <ion-option value="2">2</ion-option>
+		      <ion-option value="3">3</ion-option>
+		      <ion-option value="4">4</ion-option>
+		      <ion-option value="5">5</ion-option>
+		      <ion-option value="6">6</ion-option>
+		      <ion-option value="7">7</ion-option>
+		      <ion-option value="8">8</ion-option>
+		    </ion-select>
+		  </ion-item>
+		</ion-list>
+
+		<h5>Cabin Class</h5>
+		<ion-list radio-group [(ngModel)]="cabin">
+		  <ion-item>
+		    <ion-label>Economy</ion-label>
+		    <ion-radio value="economy" checked="true"></ion-radio>
+		  </ion-item>
+		  <ion-item>
+		    <ion-label>Business</ion-label>
+		    <ion-radio value="business"></ion-radio>
+		  </ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <button ion-button full (click)="dismiss()">
+        Done
+      </button>
+  </ion-toolbar>
+</ion-footer>
