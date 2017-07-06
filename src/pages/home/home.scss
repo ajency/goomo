@@ -1,3 +1,14 @@
 page-home {
-
+	.search-wrapper{
+		position: relative;
+		.item-block{
+			padding-left: 0;
+		}
+	}
+	.swap-button{
+		position: absolute;
+		right: 0;
+		top: 30%;
+		transform: rotate(90deg);
+	}
 }

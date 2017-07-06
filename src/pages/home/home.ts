@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
-//import { PeriodPricesServiceProvider } from '../../providers/period-prices-service';
 
+import { IonicPage,NavController, NavParams, ModalController } from 'ionic-angular';
+
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
 
 	travel: string = "flights";
   searchType: string = 'departure';
@@ -21,7 +23,7 @@ export class HomePage {
   			  public modalCtrl: ModalController
   ) {
 
-      //console.log(periodService.getPeriodPrices({}));
+
   }
 
   showModal(searchType) {
@@ -55,5 +57,11 @@ export class HomePage {
 
       });
   }
+
+  showPassengers() {
+      const modal = this.modalCtrl.create('PassengersPage');
+      modal.present();
+  }
+
 
 }
