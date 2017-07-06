@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AppService } from '../providers/app-service';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { PeriodPricesServiceProvider } from '../providers/period-prices-service';
 import { AirportsDetailsServiceProvider } from '../providers/airports-details-service';
 import { HttpModule } from '@angular/http';
@@ -13,8 +12,7 @@ import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -23,8 +21,7 @@ import { HttpModule } from '@angular/http';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   providers: [
     StatusBar,
