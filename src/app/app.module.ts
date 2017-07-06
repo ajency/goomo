@@ -5,10 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AppService } from '../providers/app-service';
 import { MyApp } from './app.component';
+
+import { HomePage } from '../pages/home/home';
 import { PeriodPricesServiceProvider } from '../providers/period-prices-service';
 import { AirportsDetailsServiceProvider } from '../providers/airports-details-service';
 import { HttpModule } from '@angular/http';
 
+import { CalendarModule } from "ion2-calendar";
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -27,7 +31,6 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     AppService,
-    PeriodPricesServiceProvider,
     AirportsDetailsServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

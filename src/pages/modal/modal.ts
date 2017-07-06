@@ -15,15 +15,72 @@ import { AirportsDetailsServiceProvider } from '../../providers/airports-details
 })
 export class ModalPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
+  private keyword = '';
+  private destinations = [];
+  private topDestinations: any = [];
+  private departure: any;
+  private destination: any;
+  private searchType: any;
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private viewCtrl: ViewController,
+    private airportServiceProvider: AirportsDetailsServiceProvider
+
+  ) {
+
+    this.departure = this.navParams.get('departure');
+    this.destination = this.navParams.get('destination');
+    this.searchType = this.navParams.get('searchType');
   }
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
+    var topDestinations = this.airportServiceProvider.getTopSources();
+    this.topDestinations = topDestinations.airports;
   }
 
+
+
+
   dismiss(data) {
-    this.viewCtrl.dismiss(data);
+    this.viewCtrl.dismiss();
   }
+
+  searchAirports(){
+    if(this.keyword.length<=1){
+      this.destinations = [];
+      return;
+    }
+    var payload = {"keyword":this.keyword};
+    this.airportServiceProvider.getAirportDetails(payload)
+    .then((res) => {
+      console.log(res);
+      this.destinations = res.data;
+    })
+    .catch((err) => {
+      console.warn(err)
+    });
+  }
+
+
+  selectDestination(destination){
+    if(this.searchType == 'departure'){
+      // this.departure = destination.iata +' - '+destination.name;
+      this.departure = destination;
+    }
+
+    if(this.searchType == 'destination'){
+      //this.destination = destination.iata +' - '+destination.name;
+      this.destination = destination;
+    }
+
+    this.viewCtrl.dismiss({departure: this.departure, destination: this.destination});
+  }
+
+
 
 }
