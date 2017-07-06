@@ -21,7 +21,7 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="FadeSplashScreenDuration" value="1.0" />
-    <preference name="SplashScreen" value="/assets/img/pwaloading.png" />
+    <preference name="SplashScreen" value="/assets/pwaloading.png" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="SplashScreenDelay" value="10000" />
