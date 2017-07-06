@@ -6,17 +6,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding-horizontal>
 
   <div>
     <ion-segment [(ngModel)]="travel">
-      <ion-segment-button value="flights">
+      <ion-segment-button value="flights" >
+      	<img src="./assets/plane.png" width="50">
         Flights
       </ion-segment-button>
       <ion-segment-button >
+      	<img src="./assets/holidays.png" width="50">
         Holidays
       </ion-segment-button>
       <ion-segment-button >
+      	<img src="./assets/traders.png" width="50">
         Tradefairs
       </ion-segment-button>
     </ion-segment>
@@ -24,9 +27,9 @@
 
   <div [ngSwitch]="travel">
   	<ion-grid *ngSwitchCase="'flights'">
-  	  <ion-row>
+  	  <ion-row class="return-toggle">
   	  	<div>One-way</div>
-    	<ion-toggle [(ngModel)]="return"></ion-toggle>
+    	<ion-toggle [(ngModel)]="return" class="custom-toggle"></ion-toggle>
   	  	<div>Return</div>
   	  </ion-row>
 
@@ -64,7 +67,7 @@
   	  	    <ion-input type="text" placeholder="Select No. of Passengers" value="1 Adult, Economy"></ion-input>
   	  	  </ion-item>
 
-  	  	  <button ion-button block>Search Flights</button>
+  	  	  <button ion-button block class="search-btn">Search Flights</button>
   	  </div>
   	</ion-grid>
 
