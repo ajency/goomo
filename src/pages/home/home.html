@@ -1,14 +1,71 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Goomo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <div>
+    <ion-segment [(ngModel)]="travel">
+      <ion-segment-button value="flights">
+        Flights
+      </ion-segment-button>
+      <ion-segment-button >
+        Holidays
+      </ion-segment-button>
+      <ion-segment-button >
+        Tradefairs
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="travel">
+  	<ion-grid *ngSwitchCase="'flights'">
+  	  <div>
+  	  	<a>Return</a>
+  	  	<a>One-way</a>
+  	  </div>
+
+  	  <div>
+  	  	  <ion-item (click)="showModal()">
+  	  	    <ion-input type="text" placeholder="Select Departure City" value=""></ion-input>
+  	  	  </ion-item>
+
+  	  	  <ion-item (click)="showModal()">
+  	  	    <ion-input type="text" placeholder="Select Destination City" value=""></ion-input>
+  	  	  </ion-item>
+
+  	  	  <ion-row>
+  	  	    <ion-col col-6>
+  	  	    	<ion-input type="text" placeholder="Depart Date" value=""></ion-input>
+  	  	    </ion-col>
+  	  	    <ion-col col-6>
+  	  	    	<ion-input type="text" placeholder="Return Date" value=""></ion-input>
+  	  	    </ion-col>
+  	  	  </ion-row>
+
+  	  	  <ion-item>
+  	  	    <ion-input type="text" placeholder="Select No. of Passengers" value="1 Adult, Economy"></ion-input>
+  	  	  </ion-item>
+
+  	  	  <button ion-button block>Search Flights</button>
+  	  </div>
+  	</ion-grid>
+
+  	<ion-grid *ngSwitchCase="'holidays'">
+  	  <ion-row>
+  	    <ion-col col-12><h2>Holidays</h2></ion-col>
+  	  </ion-row>
+  	</ion-grid>
+
+  	<ion-grid *ngSwitchCase="'tradefairs'">
+  	  <ion-row>
+  	    <ion-col col-12><h2>Tradefairs</h2></ion-col>
+  	  </ion-row>
+  	</ion-grid>
+  </div>
+
 </ion-content>

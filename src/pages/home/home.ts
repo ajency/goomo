@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,17 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+	travel: string = "flights";
 
+  constructor(public navCtrl: NavController,
+  			  public navParams: NavParams,
+  			  public modalCtrl: ModalController) {
+
+  }
+
+  showModal() {
+      const modal = this.modalCtrl.create('ModalPage');
+      modal.present();
   }
 
 }
