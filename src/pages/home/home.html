@@ -24,19 +24,30 @@
 
   <div [ngSwitch]="travel">
   	<ion-grid *ngSwitchCase="'flights'">
-  	  <div>
-  	  	<a>Return</a>
-  	  	<a>One-way</a>
-  	  </div>
+  	  <ion-row>
+  	  	<div>One-way</div>
+    	<ion-toggle [(ngModel)]="return"></ion-toggle>
+  	  	<div>Return</div>
+  	  </ion-row>
 
   	  <div>
-  	  	  <ion-item (click)="showModal()">
-  	  	    <ion-input type="text" placeholder="Select Departure City" value=""></ion-input>
-  	  	  </ion-item>
+  	  	<div class="search-wrapper">
+  	  	    <ion-item (click)="showModal()">
+  	  	      <p>Select Departure City</p>
+  	  	      <h2>GOA</h2>
+  	  	      <h6>GOI - Dabolim Goa International Airport</h6>
+  	  	    </ion-item>
 
-  	  	  <ion-item (click)="showModal()">
-  	  	    <ion-input type="text" placeholder="Select Destination City" value=""></ion-input>
-  	  	  </ion-item>
+  	  	    <ion-item (click)="showModal()">
+  	  	      <p>Select Destination City</p>
+  	  	      <h2>Mumbai</h2>
+  	  	      <h6>BOM - Chatrapati Shivaji International Airport</h6>
+  	  	    </ion-item>
+
+  	  	    <button ion-fab icon-only round class="swap-button">
+  	  	      <ion-icon name="swap"></ion-icon>
+  	  	    </button>
+  	  	</div>
 
   	  	  <ion-row>
   	  	    <ion-col col-6>
