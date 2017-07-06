@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage,NavController, NavParams, ModalController } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-	travel: string = "flights";
-
   constructor(public navCtrl: NavController,
   			  public navParams: NavParams,
-  			  public modalCtrl: ModalController) {
+  			  public modalCtrl: ModalController
+  ) {
 
   }
 
@@ -19,9 +19,11 @@ export class HomePage {
       const modal = this.modalCtrl.create('ModalPage');
       modal.present();
   }
+
   showPassengers() {
       const modal = this.modalCtrl.create('PassengersPage');
       modal.present();
   }
+
 
 }

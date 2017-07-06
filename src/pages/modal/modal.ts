@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { AirportsDetailsServiceProvider } from '../../providers/airports-details-service';
 
 /**
  * Generated class for the ModalPage page.
