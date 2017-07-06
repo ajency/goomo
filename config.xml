@@ -28,7 +28,7 @@
     <preference name="FadeSplashScreenDuration" value="1.0" />
     <preference name="SplashScreenBackgroundColor" value="white" />
     <preference name="SplashMaintainAspectRatio" value="true" />
-    <preference name="SplashScreen" value="/assets/img/pwaloading.png" />
+    <preference name="SplashScreen" value="/assets/pwaloading.png" />
     <preference name="SplashScreenWidth" value="130" />
     <preference name="SplashScreenHeight" value="28" />
     <platform name="android">
