@@ -9,6 +9,7 @@ page-home {
 	}
 	.date-wrapper, .passenger-wrapper{
 		margin-bottom: 10px;
+		position: relative;
 		.item-block{
 			padding-left: 0;
 			height: 100%;
@@ -26,9 +27,20 @@ page-home {
 	.swap-button{
 		position: absolute;
 		right: 0;
-		top: 30%;
+		top: 35%;
 		transform: rotate(90deg);
-		background-color: #036685;
+		background-color: #fff;
+		color: #036685;
+		border: 1px solid #036685;
+		box-shadow: none;
+		&.fab[mini]{
+			width: 30px;
+			height: 30px;
+			ion-icon{
+				font-size: 1.8rem;
+			}
+
+		}
 	}
 
 	ion-segment{
@@ -72,11 +84,11 @@ page-home {
 		color: #565656;
 		.custom-toggle{
 			height: 18px;
-			width: 50px;
+			width: 52px;
 			margin: 0 10px;
 			&.toggle-checked{
 				.toggle-inner{
-					left: 17px;
+					left: 20px;
 					// top: 0px;
 				}
 			}
@@ -92,7 +104,11 @@ page-home {
 				background: #FF8500;
 			}
 		}
+		.toggle-ios.toggle-checked .toggle-inner{
+			left: 17px;
+		}
 	}
+
 
 	.city-select{
 			margin-bottom: 20px;

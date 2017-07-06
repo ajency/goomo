@@ -20,6 +20,7 @@
 	background-color: #fff2f2;
 	padding: 1rem;
 	border-bottom: 1px solid #ff6e6e;
+	margin-bottom: 20px;
 }
 .lighter{
 	font-weight: 400;
@@ -38,7 +39,7 @@
 .toolbar-title{
 	color: #fff;
 }
-.bar-buttons-md {
+.bar-buttons {
 	 -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -67,12 +68,12 @@
 }
 
 .city-search{
-	.badge-md{
+	.badge{
 		background:#9b9b9b;
 		width: 60px;
 
 	}
-	.item-md{
+	.item{
 		color::#9b9b9b;
 		padding-left: 0px;
 		b{

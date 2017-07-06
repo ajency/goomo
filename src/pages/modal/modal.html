@@ -37,8 +37,8 @@
 <div *ngIf="!destinations.length">
 <h6 class="lighter">Top Cities</h6>
 <ion-list>
-  <ion-item *ngFor="let topdestination of topDestinations">
-    <ion-badge >{{topdestination.airtport_code}}</ion-badge> <B>{{topdestination.city_name}} , {{topdestination.country_abbreviation}}</B> ({{topdestination.airport_name}})
+  <ion-item *ngFor="let topdestination of topDestinations" >
+    <ion-badge >{{topdestination.airport_code}}</ion-badge> <B>{{topdestination.city_name}} , {{topdestination.country_abbreviation}}</B> ({{topdestination.airport_name}})
   </ion-item>
 </ion-list>
 </div>
