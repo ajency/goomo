@@ -581,8 +581,6 @@ export class AirportsDetailsServiceProvider {
         this.filters = {}
         this.filters["limit"] = 10;
         this.filters["page"] = 1;
-        this.filters["search"] = null;
-        this.filters["popular"] = null;
     }
 
     public getTopSources() {
@@ -596,7 +594,7 @@ export class AirportsDetailsServiceProvider {
     public getAirportDetails(filters: {}, type: string = 'promise'): any{
         this.filters = filters;
         console.log(this.filters);
-        let url = 'http://btapp2.ajency.in/skus/getSkuDetails';
+        let url = 'https://goomo.ajency.in/api/api/airports';
         return this.appservice.request(url,'get',this.filters, this.defaultHeaders, false, type);
     }
 }
