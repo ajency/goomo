@@ -19,7 +19,7 @@ export class HomePage {
         showYearPicker:true,
         closeIcon: true,
         from: new Date(),
-/*        to  : new Date(),*/
+        to  : new Date(),
         isRadio : false,
         weekdaysTitle : "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_")
     }
@@ -29,6 +29,7 @@ export class HomePage {
   			  public modalCtrl: ModalController,
               public calendarCtrl: CalendarController
   ) {
+      this.dates.return_date_show = false;
 
   }
 
@@ -37,7 +38,7 @@ export class HomePage {
       modal.present();
   }
 
-    openCalendar(){
+  openCalendar(){
         this.calendarCtrl.openCalendar(
                 this.calendarOptions
         ).then( (res:any) => {
@@ -48,8 +49,8 @@ export class HomePage {
                 console.log(moment("1454521239279", "x").format("DD MMM YYYY hh:mm a"));
                 console.log(moment.unix(1454521239279/1000).format("DD MMM YYYY hh:mm a"));
 
-                this.dates.depart_date = res.to.time;
-                this.dates.return_date = res.from.time;
+                this.dates.depart_date = 'Thu, 06 Jul';
+                this.dates.return_date = 'Thu, 10 Jul';
         })
         .catch( () => {} );
 
@@ -59,5 +60,7 @@ export class HomePage {
       const modal = this.modalCtrl.create('PassengersPage');
       modal.present();
   }
+
+
 
 }

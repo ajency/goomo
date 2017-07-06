@@ -26,7 +26,7 @@
   	<ion-grid *ngSwitchCase="'flights'">
   	  <ion-row>
   	  	<div>One-way</div>
-    	<ion-toggle [(ngModel)]="return"></ion-toggle>
+    	<ion-toggle [(ngModel)]="dates.return_date_show"></ion-toggle>
   	  	<div>Return</div>
   	  </ion-row>
 
@@ -51,11 +51,11 @@
 
   	  	  <ion-row>
   	  	    <ion-col col-6>
-  	  	    	<ion-input type="text" placeholder="Depart Date" value=""></ion-input>
+				<ion-input type="text" (click)="openCalendar()" [value]="dates.depart_date" placeholder="Depart Date" value=""></ion-input>
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
-  	  	    <ion-col col-6>
-  	  	    	<ion-input type="text" placeholder="Return Date" value=""></ion-input>
+  	  	    <ion-col col-6 *ngIf="dates.return_date_show">
+				<ion-input type="text" (click)="openCalendar()" [value]="dates.return_date" placeholder="Return Date" value=""></ion-input>
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
   	  	  </ion-row>
