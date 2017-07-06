@@ -16,7 +16,16 @@ export class HomePage {
               public periodService: PeriodPricesServiceProvider
   ) {
 
-      console.log(periodService.getPeriodPrices({}));
+      return new Promise((resolve,reject) => {
+
+          this.periodService.getPeriodPrices({})
+              .then((res) => {
+                  resolve(res);
+              })
+              .catch((err) => {
+                  reject(err)
+              });
+      });
   }
 
   showModal() {
