@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { PeriodPricesServiceProvider } from '../../providers/period-prices-service';
 
 @Component({
   selector: 'page-home',
@@ -11,8 +12,11 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
   			  public navParams: NavParams,
-  			  public modalCtrl: ModalController) {
+  			  public modalCtrl: ModalController,
+              public periodService: PeriodPricesServiceProvider
+  ) {
 
+      console.log(periodService.getPeriodPrices({}));
   }
 
   showModal() {

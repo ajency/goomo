@@ -6,6 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AppService } from '../providers/app-service';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PeriodPricesServiceProvider } from '../providers/period-prices-service';
+import { AirportsDetailsServiceProvider } from '../providers/airports-details-service';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +18,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,6 +30,8 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     AppService,
+    PeriodPricesServiceProvider,
+    AirportsDetailsServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
