@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {AppService} from "../app-service";
+import {AppService} from "./app-service";
 
 /*
  Generated class for the SkuDetailsServiceProvider provider.
