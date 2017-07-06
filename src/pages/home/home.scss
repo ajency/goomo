@@ -1,8 +1,26 @@
 page-home {
 	.search-wrapper{
 		position: relative;
+		margin-top: 2rem;
 		.item-block{
 			padding-left: 0;
+			padding-right: 7rem;
+		}
+	}
+	.date-wrapper, .passenger-wrapper{
+		margin-bottom: 10px;
+		.item-block{
+			padding-left: 0;
+			height: 100%;
+		}
+		ion-icon{
+			font-size: 1.8em;
+		}
+		.col{
+			padding: 5px 0;
+		}
+		[col-6]{
+			margin-left: 15px;
 		}
 	}
 	.swap-button{
@@ -10,6 +28,7 @@ page-home {
 		right: 0;
 		top: 30%;
 		transform: rotate(90deg);
+		background-color: #036685;
 	}
 
 	ion-segment{
@@ -17,7 +36,7 @@ page-home {
 		margin: 0 -16px;
 		background-color: #047091 !important;
 		img{
-			margin: 5px auto 0;
+			margin: 5px auto -15px;
 			display: block;
 		}
 	}
@@ -29,7 +48,7 @@ page-home {
 		text-transform: uppercase;
 		color: #8BC8DA !important;
 		margin: 0 2rem;
-		height: 8.5rem !important;
+		height: 7.8rem !important;
 		transition: all 0.3s ease;
 		&.segment-activated{
 			font-weight: 600;
@@ -41,25 +60,72 @@ page-home {
 	.search-btn{
 		background-color: #FF8500;
 		border-radius: 0;
+		text-transform: none;
+		font-size: 1.8rem;
+		margin-top: 5rem;
 	}
 
 	.return-toggle{
 		justify-content: center;
 		align-items: center;
 		margin-top: 10px;
+		color: #565656;
 		.custom-toggle{
-			height: 15px;
+			height: 18px;
+			width: 50px;
 			margin: 0 10px;
 			&.toggle-checked{
 				.toggle-inner{
 					left: 17px;
-					top: 0px;
+					// top: 0px;
 				}
 			}
-			.toggle-inner{
-				width: 15px;
-				height: 15px;
+			.toggle-icon{
+				background-color: #fff;
+				border: 1px solid #FF8500;
 			}
+			.toggle-inner{
+				width: 12px;
+				height: 12px;
+				left: 2px;
+				top: 2px;
+				background: #FF8500;
+			}
+		}
+	}
+
+	.city-select{
+			margin-bottom: 20px;
+		ion-item{
+		}
+		ion-label{
+			margin-bottom: 5px;
+		}
+		p{
+			margin-bottom: 10px;
+			font-size: 1.3rem;
+		}
+		h2{
+			font-size: 2.5rem;
+			// text-transform: uppercase;
+		}
+		h6{
+			font-size: 1.2rem;
+			color: #444444;
+		}
+	}
+	.date-select, .passenger-select{
+		// margin-bottom: 20px;
+		ion-label{
+			margin-bottom: 5px;
+		}
+		p{
+			margin-bottom: 10px;
+			font-size: 1.3rem;
+		}
+		h2{
+			font-size: 1.8rem;
+			// text-transform: uppercase;
 		}
 	}
 }
