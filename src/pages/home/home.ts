@@ -31,7 +31,7 @@ export class HomePage {
   ) {
 
   }
-    
+
   showModal() {
       const modal = this.modalCtrl.create('ModalPage');
       modal.present();
@@ -55,5 +55,9 @@ export class HomePage {
 
     }
 
+  showPassengers() {
+      const modal = this.modalCtrl.create('PassengersPage');
+      modal.present();
+  }
 
 }
