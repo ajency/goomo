@@ -30,12 +30,15 @@
   	  </div>
 
   	  <div>
-  	  	  <ion-item (click)="showModal()">
-  	  	    <ion-input type="text" placeholder="Select Departure City" value=""></ion-input>
+
+          <ion-item *ngIf="departureValue"><h4>{{departure.city}}</h4></ion-item>
+  	  	  <ion-item (click)="showModal('departure')">
+  	  	    <ion-input type="text" placeholder="Select Departure City" [(ngModel)]="departureValue" value=""></ion-input>
   	  	  </ion-item>
 
-  	  	  <ion-item (click)="showModal()">
-  	  	    <ion-input type="text" placeholder="Select Destination City" value=""></ion-input>
+          <ion-item *ngIf="destinationValue"><h4>{{destination.city}}</h4></ion-item>
+          <ion-item (click)="showModal('destination')">
+  	  	    <ion-input type="text" placeholder="Select Destination City" [(ngModel)]="destinationValue" value=""></ion-input>
   	  	  </ion-item>
 
   	  	  <ion-row>

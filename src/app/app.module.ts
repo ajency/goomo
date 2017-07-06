@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AppService } from '../providers/app-service';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { PeriodPricesServiceProvider } from '../providers/period-prices-service';
+//import { PeriodPricesServiceProvider } from '../providers/period-prices-service';
 import { AirportsDetailsServiceProvider } from '../providers/airports-details-service';
 import { HttpModule } from '@angular/http';
 
@@ -29,8 +29,7 @@ import { HttpModule } from '@angular/http';
   providers: [
     StatusBar,
     SplashScreen,
-    AppService,
-    PeriodPricesServiceProvider,
+    AppService,    
     AirportsDetailsServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
