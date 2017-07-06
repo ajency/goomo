@@ -19,25 +19,26 @@
 
 
 <ion-content padding>
+
 <div class="city-search">
 	<div class="error-alert" *ngIf="keyword.length && !destinations.length">
 		<ion-icon name="warning" color="danger"></ion-icon> No airport or cities found
 	</div>
 
   <div *ngIf="destinations.length>0">
-	<h6>Search Results</h6>
+	<h6 class="lighter">Search Results</h6>
 	<ion-list>
 	  <ion-item *ngFor="let destination of destinations" (click)="selectDestination(destination)">
-	    {{destination.city}}, {{destination.country}} - {{destination.name}} ({{destination.iata}})
+	    <ion-badge >{{destination.iata}}</ion-badge> <B>{{destination.city}} , {{destination.country}}</B> ({{destination.name}})
 	  </ion-item>
 	</ion-list>
 </div>
 
 <div *ngIf="!destinations.length">
-<h6>Top Cities</h6>
+<h6 class="lighter">Top Cities</h6>
 <ion-list>
   <ion-item *ngFor="let topdestination of topDestinations">
-    {{topdestination.city_name}}, {{topdestination.city_code}} - {{topdestination.airport_name}} ({{topdestination.airport_code}})
+    <ion-badge >{{topdestination.airtport_code}}</ion-badge> <B>{{topdestination.city_name}} , {{topdestination.country_abbreviation}}</B> ({{topdestination.airport_name}})
   </ion-item>
 </ion-list>
 </div>

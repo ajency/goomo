@@ -21,7 +21,10 @@
 	padding: 1rem;
 	border-bottom: 1px solid #ff6e6e;
 }
-
+.lighter{
+	font-weight: 400;
+	color:#9b9b9b;
+}
 .cal-icon{
 	position: absolute;
 	right: 15px;
@@ -34,4 +37,44 @@
 }
 .toolbar-title{
 	color: #fff;
+}
+.bar-buttons-md {
+	 -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    .bar-button{
+    	color:white;
+    }
+}
+.searchbar-input-container{
+	.searchbar-input {
+		background:none;
+		color:#fff;
+		box-shadow: none;
+	}
+	.searchbar-search-icon{
+		color:#fff;
+	}
+	*::-webkit-input-placeholder {
+	  color: #fff !important;
+	}
+	*:-moz-placeholder {
+	  color: #fff !important;
+	}
+	*:-ms-input-placeholder { /* IE10+ */
+	  color: #fff !important;
+	}
+}
+
+.city-search{
+	.badge-md{
+		background:#9b9b9b;
+	}
+	.item-md{
+		color::#9b9b9b;
+		padding-left: 0px;
+		b{
+			color:#000000;
+		}
+	}
 }

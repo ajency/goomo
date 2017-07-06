@@ -11,6 +11,7 @@ import { PeriodPricesServiceProvider } from '../providers/period-prices-service'
 import { AirportsDetailsServiceProvider } from '../providers/airports-details-service';
 import { HttpModule } from '@angular/http';
 
+import { CalendarModule } from "ion2-calendar";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
