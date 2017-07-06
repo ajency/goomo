@@ -14,3 +14,10 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.error-alert{
+	// color: #ff6e6e;
+	background-color: #fff2f2;
+	padding: 1rem;
+	border-bottom: 1px solid #ff6e6e;
+}
