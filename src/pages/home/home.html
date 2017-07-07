@@ -37,14 +37,14 @@
 
   	  	<div class="search-wrapper">
   	  	    <ion-item (click)="showModal('departure')" class="city-select">
-  	  	      <p>Select Departure City</p>
+  	  	      <p><span *ngIf="!departureValue">Select </span>Departure City</p>
   	  	      <h2 *ngIf="departureValue">{{departure.city}}</h2>
   	  	      <h6 *ngIf="departureValue">{{departureValue}}</h6>
               <!-- <ion-input *ngIf="!departureValue" type="text"></ion-input> -->
   	  	    </ion-item>
 
   	  	    <ion-item (click)="showModal('destination')" class="city-select">
-  	  	      <p>Select Destination City</p>
+  	  	      <p><span *ngIf="!destinationValue">Select </span>Destination City</p>
   	  	      <h2 *ngIf="destinationValue">{{destination.city}}</h2>
   	  	      <h6 *ngIf="destinationValue">{{destinationValue}}</h6>
               <!-- <ion-input *ngIf="!destinationValue" type="text"></ion-input> -->
@@ -80,6 +80,7 @@
   	  	  	<p>Traveller &amp; Class</p>
   	  	  	<h2>1 Adult, Economy</h2>
   	  	  </ion-item>
+  	  	  <ion-icon name="person" class="cal-icon"></ion-icon>
   	  	</div>
 
   	  	  <button ion-button block large class="search-btn">Search Flights</button>
