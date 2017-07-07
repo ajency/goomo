@@ -20,7 +20,7 @@
 
 <ion-content padding>
 
-<div class="loader">Loading...</div>
+<div *ngIf="loadingAirports" class="loader">Loading...</div>
 
 <div class="city-search">
 	<div class="error-alert" *ngIf="keyword.length > 2 && airportNotFound">
