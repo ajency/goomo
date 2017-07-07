@@ -89,7 +89,7 @@
   	  	  <ion-icon name="person" class="cal-icon"></ion-icon>
   	  	</div>
 
-  	  	  <button ion-button block large class="search-btn" [disabled]="!departureValue || !destinationValue">Search Flights</button>
+  	  	  <button ion-button block large class="search-btn" [disabled]="!departureValue || !destinationValue || !dates.depart_date">Search Flights</button>
   	  </div>
 
   	  <ion-slides pager="true" paginationType="bullets">
