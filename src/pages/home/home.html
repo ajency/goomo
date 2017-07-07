@@ -14,11 +14,11 @@
       	<img src="./assets/plane.png" width="50">
         Flights
       </ion-segment-button>
-      <ion-segment-button >
+      <ion-segment-button value="holidays">
       	<img src="./assets/holidays.png" width="50">
         Holidays
       </ion-segment-button>
-      <ion-segment-button >
+      <ion-segment-button value="tradefairs">
       	<img src="./assets/traders.png" width="50">
         Tradefairs
       </ion-segment-button>
@@ -145,13 +145,23 @@
 
   	<ion-grid *ngSwitchCase="'holidays'">
   	  <ion-row>
-  	    <ion-col col-12><h2>Holidays</h2></ion-col>
+  	    <ion-col col-12>
+  	    	<div class="incomplete">
+  	    		<ion-icon name="ios-clock-outline"></ion-icon>
+  	    		<h2>We all love holidays, unfortunately flights is all we could manage in 8 hours!</h2>
+  	    	</div>
+  	    </ion-col>
   	  </ion-row>
   	</ion-grid>
 
   	<ion-grid *ngSwitchCase="'tradefairs'">
   	  <ion-row>
-  	    <ion-col col-12><h2>Tradefairs</h2></ion-col>
+  	    <ion-col col-12>
+  	    	<div class="incomplete">
+  	    		<ion-icon name="ios-clock-outline"></ion-icon>
+  	    		<h2>If only we had superpowers.</h2>
+  	    	</div>
+  	    </ion-col>
   	  </ion-row>
   	</ion-grid>
   </div>

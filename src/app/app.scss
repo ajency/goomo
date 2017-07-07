@@ -139,3 +139,15 @@
     box-shadow: 0 2.5em 0 0;
   }
 }
+
+.week-title{
+	color: #fff;
+}
+.days[_ngcontent-c0]{
+
+	.days-btn.on-selected[_ngcontent-c0]{
+		background-color: #FF8500;
+		border-radius: 0;
+		font-weight: 600;
+	}
+}
