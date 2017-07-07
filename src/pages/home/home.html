@@ -61,14 +61,14 @@
 		  	    <ion-item (click)="openCalendar()" class="date-select">
 		  	      <p>Departure</p>
 		  	      <!-- <h2 >Thu, 06 Jul</h2> -->
-		  	      <h2 *ngIf="destinationValue">{{dates.depart_date}}</h2>
+		  	      <h2>{{dates.depart_date}}</h2>
 		  	    </ion-item>
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
   	  	    <ion-col col-6 *ngIf="dates.return_date_show">
   	  	    	<ion-item (click)="openCalendar()" class="date-select">
   	  	    	  <p>Return</p>
-  	  	    	  <h2 *ngIf="destinationValue">{{dates.return_date}}</h2>
+  	  	    	  <h2>{{dates.return_date}}</h2>
   	  	    	</ion-item>
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>

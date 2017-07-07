@@ -22,16 +22,13 @@ export class HomePage {
   private destinationValue: any;
 
     private dates: any = {};
-
     private calendarOptions: any = {
-        canBackwardsSelected:true,
         isSaveHistory:true,
         showYearPicker:true,
         closeIcon: true,
-        from: new Date(),
-        to  : new Date(),
-        isRadio : false,
-        weekdaysTitle : "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_")
+        weekdaysTitle : "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"),
+        closeLabel : "Close",
+        defaultDate : new Date()
     }
 
   constructor(public navCtrl: NavController,
@@ -77,15 +74,34 @@ export class HomePage {
   }
 
   openCalendar(){
-        this.calendarCtrl.openCalendar(
+
+      let b: Date = new Date();
+      this.calendarOptions.from = new Date();
+      this.calendarOptions.to  = new Date(b.getFullYear(), b.getMonth() + 1, 0);
+
+      this.dates.return_date_show == true ? this.calendarOptions.isRadio = false : this.calendarOptions.isRadio = true;
+
+
+      this.calendarCtrl.openCalendar(
                 this.calendarOptions
         ).then( (res:any) => {
 
                 console.log(res.to.time);
                 console.log(res.from.time);
+                console.log(res.date.time);
+                console.log(moment(res.to.time).format("ddd, dd mmm"));
+                console.log(moment(res.from.time).format("ddd, dd mmm"));
+                console.log(moment(res.date.time).format("ddd, dd mmm"));
 
-                this.dates.depart_date = "Thu, 06 Jul";
-                this.dates.return_date = "Thu, 30 Jul";
+/*                this.dates.depart_date = "Thu, 06 Jul";
+                this.dates.return_date = "Thu, 30 Jul";*/
+
+              if(this.calendarOptions.isRadio == true) {
+                  this.dates.depart_date = new Date(res.to.time).toDateString();
+                  this.dates.return_date = "Thu, 30 Jul";
+              } else {
+                  this.dates.depart_date = new Date(res.date.time).toDateString();
+              }
         })
         .catch( () => {} );
 
