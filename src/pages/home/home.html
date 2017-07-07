@@ -60,7 +60,7 @@
   	  	<div class="date-wrapper">
   	  	  <ion-row>
   	  	    <ion-col ngClass="{{ dates.return_date_show ? col-12 : col-6 }}">
-		  	    <ion-item  class="date-select">
+		  	    <ion-item  class="date-select" (click)="showComingSoon()">
 		  	      <p>Depart on</p>
 		  	      <h2 >Fri, 7 Jul</h2>
 		  	      <!-- <h2>{{dates.depart_date}}</h2> -->
@@ -68,7 +68,7 @@
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
   	  	    <ion-col col-6 *ngIf="dates.return_date_show">
-  	  	    	<ion-item  class="date-select">
+  	  	    	<ion-item  class="date-select" (click)="showComingSoon()">
   	  	    	  <p>Return on</p>
                 <h2 >Wed, 19 Jul</h2>
   	  	    	  <!-- <h2>{{dates.return_date}}</h2> -->
@@ -92,7 +92,7 @@
   	  	  <ion-icon name="person" class="cal-icon"></ion-icon>
   	  	</div>
 
-  	  	  <button ion-button block large class="search-btn" [disabled]="!departureValue || !destinationValue">Search Flights</button>
+  	  	  <button ion-button block large class="search-btn" (click)="showComingSoon()" [disabled]="!departureValue || !destinationValue">Search Flights</button>
   	  </div>
 
   	  <ion-slides pager="true" paginationType="bullets">
@@ -101,7 +101,7 @@
   	     		<div class="img-holder">
   	     			<img src="/assets/offer_plane.png" width="45">
   	     		</div>
-  	     		<div class="offer-text">
+  	     		<div class="offer-text" (click)="showComingSoon()">
   	     			<h5>Instant discount on booking amount</h5>
   	     			<ion-row>
   	     				<ion-col col-6>
@@ -127,7 +127,7 @@
   	     		<div class="img-holder">
   	     			<img src="/assets/offer_plane.png" width="45">
   	     		</div>
-  	     		<div class="offer-text">
+  	     		<div class="offer-text" (click)="showComingSoon()">
   	     			<h5>Instant discount on booking amount</h5>
   	     			<ion-row>
   	     				<ion-col col-6>

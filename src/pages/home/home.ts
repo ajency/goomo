@@ -117,6 +117,11 @@ export class HomePage {
       modal.present();
   }
 
+  showComingSoon() {
+      const modal = this.modalCtrl.create('ComingSoonPage');
+      modal.present();
+  }
+
   swapDestinations(){
     var departure = this.departure;
     var destination = this.destination;
