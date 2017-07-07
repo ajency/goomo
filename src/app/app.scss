@@ -55,6 +55,12 @@
 	}
 	.searchbar-search-icon{
 		color:#fff;
+		background-image: none;
+		&:after{
+			content: "\f4a5";
+			font-family: "Ionicons";
+			font-size: 18px;
+		}
 	}
 	*::-webkit-input-placeholder {
 	  color: #fff !important;
@@ -151,3 +157,4 @@
 		font-weight: 600;
 	}
 }
+

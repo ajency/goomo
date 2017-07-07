@@ -28,7 +28,8 @@ export class HomePage {
         closeIcon: true,
         weekdaysTitle : "Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_"),
         closeLabel : "Close",
-        defaultDate : new Date()
+        defaultDate : new Date(),
+        title: "Select a Date"
     }
 
   constructor(public navCtrl: NavController,
@@ -77,7 +78,7 @@ export class HomePage {
 
       let b: Date = new Date();
       this.calendarOptions.from = new Date();
-      this.calendarOptions.to  = new Date(b.getFullYear(), b.getMonth() + 1, 0);
+      this.calendarOptions.to  = new Date(b.getFullYear(), b.getMonth() + 3, 0);
 
       this.dates.return_date_show == true ? this.calendarOptions.isRadio = false : this.calendarOptions.isRadio = true;
 
