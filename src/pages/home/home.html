@@ -58,17 +58,18 @@
   	  	<div class="date-wrapper">
   	  	  <ion-row>
   	  	    <ion-col ngClass="{{ dates.return_date_show ? col-12 : col-6 }}">
-		  	    <ion-item (click)="openCalendar()" class="date-select">
+		  	    <ion-item  class="date-select">
 		  	      <p>Departure</p>
-		  	      <!-- <h2 >Thu, 06 Jul</h2> -->
-		  	      <h2>{{dates.depart_date}}</h2>
+		  	      <h2 >Thu, 06 Jul</h2>
+		  	      <!-- <h2>{{dates.depart_date}}</h2> -->
 		  	    </ion-item>
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
   	  	    <ion-col col-6 *ngIf="dates.return_date_show">
-  	  	    	<ion-item (click)="openCalendar()" class="date-select">
+  	  	    	<ion-item  class="date-select">
   	  	    	  <p>Return</p>
-  	  	    	  <h2>{{dates.return_date}}</h2>
+                <h2 >Thu, 16 Jul</h2>
+  	  	    	  <!-- <h2>{{dates.return_date}}</h2> -->
   	  	    	</ion-item>
   	  	    	<ion-icon name="calendar" class="cal-icon"></ion-icon>
   	  	    </ion-col>
@@ -89,7 +90,7 @@
   	  	  <ion-icon name="person" class="cal-icon"></ion-icon>
   	  	</div>
 
-  	  	  <button ion-button block large class="search-btn" [disabled]="!departureValue || !destinationValue || !dates.depart_date">Search Flights</button>
+  	  	  <button ion-button block large class="search-btn" [disabled]="!departureValue || !destinationValue">Search Flights</button>
   	  </div>
 
   	  <ion-slides pager="true" paginationType="bullets">
