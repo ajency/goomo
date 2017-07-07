@@ -81,26 +81,20 @@ export class HomePage {
 
       this.dates.return_date_show == true ? this.calendarOptions.isRadio = false : this.calendarOptions.isRadio = true;
 
+      this.dates.depart_date = '';
+      this.dates.return_date = '';
 
       this.calendarCtrl.openCalendar(
                 this.calendarOptions
         ).then( (res:any) => {
-
-                console.log(res.to.time);
-                console.log(res.from.time);
-                console.log(res.date.time);
-                console.log(moment(res.to.time).format("ddd, dd mmm"));
-                console.log(moment(res.from.time).format("ddd, dd mmm"));
-                console.log(moment(res.date.time).format("ddd, dd mmm"));
-
 /*                this.dates.depart_date = "Thu, 06 Jul";
                 this.dates.return_date = "Thu, 30 Jul";*/
 
               if(this.calendarOptions.isRadio == true) {
-                  this.dates.depart_date = new Date(res.to.time).toDateString();
-                  this.dates.return_date = "Thu, 30 Jul";
+                  this.dates.depart_date = new Date(res.date.time).toString().substring(0, 10);
               } else {
-                  this.dates.depart_date = new Date(res.date.time).toDateString();
+                  this.dates.depart_date = new Date(res.from.time).toString().substring(0, 10);
+                  this.dates.return_date = new Date(res.to.time).toString().substring(0, 10);
               }
         })
         .catch( () => {} );
