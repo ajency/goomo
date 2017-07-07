@@ -21,7 +21,7 @@
 <ion-content padding>
 
 <div class="city-search">
-	<div class="error-alert" *ngIf="keyword.length > 2 && !destinations.length">
+	<div class="error-alert" *ngIf="keyword.length > 2 && airportNotFound">
 		<ion-icon name="warning" color="danger"></ion-icon> No airport or cities found
 	</div>
 

@@ -22,6 +22,7 @@ export class ModalPage {
   private destination: any;
   private searchType: any;
   private loadingAirports = false;
+  private airportNotFound = false;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -41,7 +42,6 @@ export class ModalPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalPage');
     this.topDestinations = this.airportServiceProvider.getTopDestinations();
-    //this.topDestinations = topDestinations.airports;
   }
 
 
@@ -49,6 +49,7 @@ export class ModalPage {
 
   dismiss(data) {
     this.viewCtrl.dismiss();
+    this.airportNotFound = false;
   }
 
   searchAirports(){
@@ -61,6 +62,11 @@ export class ModalPage {
     this.airportServiceProvider.getAirportDetails(payload)
     .then((res) => {
       this.destinations = res.data;
+      if(res.data.length<=0){
+        this.airportNotFound = true;
+      }else{
+        this.airportNotFound = false;
+      }
       this.loadingAirports = false;
     })
     .catch((err) => {
