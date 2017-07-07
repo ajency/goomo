@@ -27,11 +27,13 @@
 
   <div [ngSwitch]="travel">
   	<ion-grid *ngSwitchCase="'flights'">
-  	  <ion-row class="return-toggle">
-  	  	<div>One-way</div>
-    	<ion-toggle [(ngModel)]="dates.return_date_show" class="custom-toggle"></ion-toggle>
-  	  	<div>Return</div>
-  	  </ion-row>
+  		<div>
+	  	  <ion-row class="return-toggle">
+	  	  	<div>One-way</div>
+	    	<ion-toggle [(ngModel)]="dates.return_date_show" class="custom-toggle"></ion-toggle>
+	  	  	<div>Return</div>
+	  	  </ion-row>
+  		</div>
 
   	  <div>
 
