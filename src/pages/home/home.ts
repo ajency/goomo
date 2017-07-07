@@ -96,14 +96,7 @@ export class HomePage {
                 this.calendarOptions
         ).then( (res:any) => {
 
-                console.log(res.to.time);
-                console.log(res.from.time);
-                console.log(res.date.time);
-                console.log(moment(res.to.time).format("ddd, dd mmm"));
-                console.log(moment(res.from.time).format("ddd, dd mmm"));
-                console.log(moment(res.date.time).format("ddd, dd mmm"));
-
-/*                this.dates.depart_date = "Thu, 06 Jul";
+      /*                this.dates.depart_date = "Thu, 06 Jul";
                 this.dates.return_date = "Thu, 30 Jul";*/
 
               if(this.calendarOptions.isRadio == true) {
