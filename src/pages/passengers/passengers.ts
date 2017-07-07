@@ -14,7 +14,10 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class PassengersPage {
 
+  private passengers: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
+    this.passengers = this.navParams.get('passengers');
   }
 
   ionViewDidLoad() {
@@ -23,6 +26,7 @@ export class PassengersPage {
 
   dismiss(data) {
     this.viewCtrl.dismiss(data);
+    console.log(this.passengers);
   }
 
 }

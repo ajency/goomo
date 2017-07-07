@@ -78,7 +78,13 @@
   	  	<div class="passenger-wrapper">
   	  	  <ion-item (click)="showPassengers()" class="passenger-select">
   	  	  	<p>Traveller &amp; Class</p>
-  	  	  	<h2>1 Adult, Economy</h2>
+  	  	  	<h2>
+              <span *ngIf="passengers.adult > 0">{{passengers.adult}} Adult,</span>
+              <span *ngIf="passengers.children > 0">{{passengers.children}} Child,</span>
+              <span *ngIf="passengers.infants > 0">{{passengers.infants}} Inf,</span>
+              <span *ngIf="passengers.cabinClass == 'economy'">Economy</span>
+              <span *ngIf="passengers.cabinClass == 'buisness'">Buisness</span>
+            </h2>
   	  	  </ion-item>
   	  	  <ion-icon name="person" class="cal-icon"></ion-icon>
   	  	</div>
