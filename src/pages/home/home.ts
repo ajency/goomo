@@ -47,6 +47,9 @@ export class HomePage {
               public calendarCtrl: CalendarController
   ) {
       this.dates.return_date_show = false;
+      let b: Date = new Date();
+      this.dates.depart_date = b.toString().substring(0, 10);
+      this.dates.return_date = new Date(b.getFullYear(), b.getMonth(), b.getDate() + 9).toString().substring(0, 10);
 
 
   }
