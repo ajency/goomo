@@ -25,7 +25,8 @@
 		<ion-list>
 		  <ion-item>
 		    <ion-label>Adult (12+ years)</ion-label>
-		    <ion-select [(ngModel)]="adult">
+		    <ion-select [(ngModel)]="passengers.adult">
+					<ion-option value="0">0</ion-option>
 		      <ion-option value="1">1</ion-option>
 		      <ion-option value="2">2</ion-option>
 		      <ion-option value="3">3</ion-option>
@@ -39,7 +40,8 @@
 		  </ion-item>
 		  <ion-item>
 		    <ion-label>Children (2-12 years)</ion-label>
-		    <ion-select [(ngModel)]="children">
+		    <ion-select [(ngModel)]="passengers.children">
+					<ion-option value="0">0</ion-option>
 		      <ion-option value="1">1</ion-option>
 		      <ion-option value="2">2</ion-option>
 		      <ion-option value="3">3</ion-option>
@@ -52,8 +54,9 @@
 		  </ion-item>
 		  <ion-item>
 		    <ion-label>Infants (under 2 years)</ion-label>
-		    <ion-select [(ngModel)]="children">
-		      <ion-option value="1">1</ion-option>
+		    <ion-select [(ngModel)]="passengers.infants">
+					<ion-option value="0">0</ion-option>
+					<ion-option value="1">1</ion-option>
 		      <ion-option value="2">2</ion-option>
 		      <ion-option value="3">3</ion-option>
 		      <ion-option value="4">4</ion-option>
@@ -66,14 +69,14 @@
 		</ion-list>
 
 		<h5>Cabin Class</h5>
-		<ion-list radio-group [(ngModel)]="cabin">
+		<ion-list radio-group [(ngModel)]="passengers.cabinClass">
 		  <ion-item>
 		    <ion-label>Economy</ion-label>
 		    <ion-radio value="economy" checked="true"></ion-radio>
 		  </ion-item>
 		  <ion-item>
 		    <ion-label>Business</ion-label>
-		    <ion-radio value="business"></ion-radio>
+		    <ion-radio value="buisness"></ion-radio>
 		  </ion-item>
 		</ion-list>
 	</div>
