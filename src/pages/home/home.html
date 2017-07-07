@@ -37,14 +37,14 @@
 
   	  	<div class="search-wrapper">
   	  	    <ion-item (click)="showModal('departure')" class="city-select">
-  	  	      <p><span *ngIf="!departureValue">Select </span>Departure City</p>
+  	  	      <p><span *ngIf="!departureValue"></span>From</p>
   	  	      <h2 *ngIf="departureValue">{{departure.city}}</h2>
   	  	      <h6 *ngIf="departureValue">{{departureValue}}</h6>
               <!-- <ion-input *ngIf="!departureValue" type="text"></ion-input> -->
   	  	    </ion-item>
 
   	  	    <ion-item (click)="showModal('destination')" class="city-select">
-  	  	      <p><span *ngIf="!destinationValue">Select </span>Destination City</p>
+  	  	      <p><span *ngIf="!destinationValue"></span>To</p>
   	  	      <h2 *ngIf="destinationValue">{{destination.city}}</h2>
   	  	      <h6 *ngIf="destinationValue">{{destinationValue}}</h6>
               <!-- <ion-input *ngIf="!destinationValue" type="text"></ion-input> -->
@@ -59,7 +59,7 @@
   	  	  <ion-row>
   	  	    <ion-col ngClass="{{ dates.return_date_show ? col-12 : col-6 }}">
 		  	    <ion-item  class="date-select">
-		  	      <p>Departure</p>
+		  	      <p>Depart on</p>
 		  	      <h2 >Thu, 9 Jul</h2>
 		  	      <!-- <h2>{{dates.depart_date}}</h2> -->
 		  	    </ion-item>
@@ -67,7 +67,7 @@
   	  	    </ion-col>
   	  	    <ion-col col-6 *ngIf="dates.return_date_show">
   	  	    	<ion-item  class="date-select">
-  	  	    	  <p>Return</p>
+  	  	    	  <p>Return on</p>
                 <h2 >Thu, 19 Jul</h2>
   	  	    	  <!-- <h2>{{dates.return_date}}</h2> -->
   	  	    	</ion-item>
@@ -78,7 +78,7 @@
 
   	  	<div class="passenger-wrapper">
   	  	  <ion-item (click)="showPassengers()" class="passenger-select">
-  	  	  	<p>Traveller &amp; Class</p>
+  	  	  	<p>Traveller(s) &amp; Class</p>
   	  	  	<h2>
               <span *ngIf="passengers.adult > 0">{{passengers.adult}} Adult,</span>
               <span *ngIf="passengers.children > 0">{{passengers.children}} Child,</span>
@@ -100,7 +100,7 @@
   	     			<img src="/assets/offer_plane.png" width="45">
   	     		</div>
   	     		<div class="offer-text">
-  	     			<h5>Instant Discount on Booking Amount</h5>
+  	     			<h5>Instant discount on booking amount</h5>
   	     			<ion-row>
   	     				<ion-col col-6>
   	     					Domestic
@@ -126,7 +126,7 @@
   	     			<img src="/assets/offer_plane.png" width="45">
   	     		</div>
   	     		<div class="offer-text">
-  	     			<h5>Instant Discount on Booking Amount</h5>
+  	     			<h5>Instant discount on booking amount</h5>
   	     			<ion-row>
   	     				<ion-col col-6>
   	     					Domestic
