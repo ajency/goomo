@@ -84,7 +84,7 @@ export class AirportsDetailsServiceProvider {
                 "tz_timezone": 0,
                 "type": 0,
                 "source": "OurAirports"
-            },            
+            },
 
             {
                 "id": 507,
@@ -384,7 +384,6 @@ export class AirportsDetailsServiceProvider {
 
     public getAirportDetails(filters: {}, type: string = 'promise'): any{
         this.filters = filters;
-        console.log(this.filters);
         let url = 'https://goomo.ajency.in/api/api/airports';
         return this.appservice.request(url,'get',this.filters, this.defaultHeaders, false, type);
     }

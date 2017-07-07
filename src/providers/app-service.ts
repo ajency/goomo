@@ -45,7 +45,6 @@ export class AppService {
       if (params.length > 0) {
         url = url + '?' + params;
       }
-      console.log("url" + url);
       httpEvent = this.http.get(url,{headers: headers})
     }
     else if(type === 'post'){
