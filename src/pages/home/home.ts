@@ -100,10 +100,10 @@ export class HomePage {
                 this.dates.return_date = "Thu, 30 Jul";*/
 
               if(this.calendarOptions.isRadio == true) {
-                  this.dates.depart_date = new Date(res.to.time).toDateString();
-                  this.dates.return_date = "Thu, 30 Jul";
+                  this.dates.depart_date = new Date(res.date.time).toString().substring(0, 10);
               } else {
-                  this.dates.depart_date = new Date(res.date.time).toDateString();
+                  this.dates.depart_date = new Date(res.from.time).toString().substring(0, 10);
+                  this.dates.return_date = new Date(res.to.time).toString().substring(0, 10);
               }
         })
         .catch( () => {} );
