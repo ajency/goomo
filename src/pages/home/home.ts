@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { PlatformLocation } from '@angular/common'
 
-import { IonicPage,NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage,NavController, NavParams, ModalController, Platform } from 'ionic-angular';
 import {CalendarController } from "ion2-calendar";
 
 declare var moment: any;
@@ -20,6 +21,17 @@ export class HomePage {
 
   private departureValue: any;
   private destinationValue: any;
+
+  public destinationModal: any;
+  public dateModal: any;
+  public passengerModal: any;
+  public searchFlightModal: any;
+
+  public destinationModalOpen = false;
+  public dateModalOpen = false;
+  public passengerModalOpen = false;
+  public searchFlightModalOpen = false;
+
 
   private passengers = {
     adult: 1,
@@ -44,8 +56,30 @@ export class HomePage {
   constructor(public navCtrl: NavController,
   			  public navParams: NavParams,
   			  public modalCtrl: ModalController,
-              public calendarCtrl: CalendarController
+          public calendarCtrl: CalendarController,
+          public platform: Platform,
+          public location: PlatformLocation
   ) {
+
+    location.onPopState(() => {
+      if(this.destinationModalOpen){
+        this.destinationModal.dismiss();
+      };
+
+      if(this.dateModalOpen){
+        this.dateModal.dismiss();
+      };
+
+      if(this.passengerModalOpen){
+        this.passengerModal.dismiss();
+      };
+
+      if(this.searchFlightModalOpen){
+        this.searchFlightModal.dismiss();
+      };
+
+    });
+
       this.dates.return_date_show = false;
       let b: Date = new Date();
       this.dates.depart_date = b.toString().substring(0, 10);
@@ -57,15 +91,17 @@ export class HomePage {
   showModal(searchType) {
       this.searchType = searchType;
 
-      const modal = this.modalCtrl.create('ModalPage',{
+      this.destinationModal = this.modalCtrl.create('ModalPage',{
         departure: this.departure,
         destination: this.destination,
         searchType: searchType
       });
+      this.destinationModalOpen = true;
 
-      modal.present();
-      modal.onDidDismiss((data)=> {
+      this.destinationModal.present();
+      this.destinationModal.onDidDismiss((data)=> {
         //console.log(data);
+        this.destinationModalOpen = false;
 
         if(data){
         if(data.hasOwnProperty('departure')){
@@ -114,10 +150,13 @@ export class HomePage {
     }
 
   showPassengers() {
-      const modal = this.modalCtrl.create('PassengersPage',{
+      this.passengerModal = this.modalCtrl.create('PassengersPage',{
         passengers: this.passengers
       });
-      modal.present();
+
+      this.passengerModalOpen = true;
+
+      this.passengerModal.present();
   }
 
   showComingSoon() {
