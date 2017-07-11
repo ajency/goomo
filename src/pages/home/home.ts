@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { PlatformLocation } from '@angular/common'
 
 import { IonicPage,NavController, NavParams, ModalController, Platform } from 'ionic-angular';
@@ -61,24 +61,29 @@ export class HomePage {
           public location: PlatformLocation
   ) {
 
-    location.onPopState(() => {
-      if(this.destinationModalOpen){
-        this.destinationModal.dismiss();
-      };
 
-      if(this.dateModalOpen){
-        this.dateModal.dismiss();
-      };
-
-      if(this.passengerModalOpen){
-        this.passengerModal.dismiss();
-      };
-
-      if(this.searchFlightModalOpen){
-        this.searchFlightModal.dismiss();
-      };
-
-    });
+    // location.onPopState(() => {
+    //   if(this.destinationModalOpen){
+    //     this.destinationModal.dismiss();
+    //     return;
+    //   };
+    //
+    //   if(this.dateModalOpen){
+    //     this.dateModal.dismiss();
+    //     return;
+    //   };
+    //
+    //   if(this.passengerModalOpen){
+    //     this.passengerModal.dismiss();
+    //     return;
+    //   };
+    //
+    //   if(this.searchFlightModalOpen){
+    //     this.searchFlightModal.dismiss();
+    //     return;
+    //   };
+    //
+    // });
 
       this.dates.return_date_show = false;
       let b: Date = new Date();
@@ -86,6 +91,29 @@ export class HomePage {
       this.dates.return_date = new Date(b.getFullYear(), b.getMonth(), b.getDate() + 9).toString().substring(0, 10);
 
 
+  }
+
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+      if(this.destinationModalOpen){
+        this.destinationModal.dismiss();
+        event.preventDefault();
+      };
+
+      if(this.dateModalOpen){
+        this.dateModal.dismiss();
+        event.preventDefault();
+      };
+
+      if(this.passengerModalOpen){
+        this.passengerModal.dismiss();
+        event.preventDefault();
+      };
+
+      if(this.searchFlightModalOpen){
+        this.searchFlightModal.dismiss();
+        event.preventDefault();
+      };
   }
 
   showModal(searchType) {
